@@ -1,6 +1,6 @@
 import React from "react";
 
-export default () => (
+export default ({ totalProducts, totalValue }) => (
   <header>
     <div className="container">
       <div className="heading">
@@ -24,14 +24,14 @@ export default () => (
                 <td>No. of items</td>
                 <td>:</td>
                 <td>
-                  <strong>0</strong>
+                  <strong>{totalProducts}</strong>
                 </td>
               </tr>
               <tr>
-                <td>Sub Total</td>
+                <td>Total</td>
                 <td>:</td>
                 <td>
-                  <strong>0</strong>
+                  <strong>{totalValue}</strong>
                 </td>
               </tr>
             </tbody>
