@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link, NavLink } from "react-router-dom";
 export default ({ totalProducts, totalValue }) => (
   <header>
     <div className="container">
@@ -57,12 +57,20 @@ export default ({ totalProducts, totalValue }) => (
           </span>
         </a>
       </div>
-      <a href="log in.html" className="button-login">
+      <NavLink
+        to="/login"
+        className="button-login"
+        activeStyle={{ color: "red" }}
+      >
         Log in
-      </a>
-      <a href="sign up.html" className="button-signup">
+      </NavLink>
+      <NavLink
+        to="/signup"
+        className="button-signup"
+        activeStyle={{ color: "red" }}
+      >
         Sign up
-      </a>
+      </NavLink>
     </div>
   </header>
 );

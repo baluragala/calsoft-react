@@ -27,8 +27,8 @@ class ProductListItem extends Component {
               <img src="assets/Samsung1.jpeg" className="images" />
             </a>
           </div>
-          <h4 className="product-name">Mobile</h4>
-          <p className="product-price">Rs.8,999</p>
+          <h4 className="product-name">{this.props.product.name}</h4>
+          <p className="product-price">USD {this.props.product.price}</p>
           <div className="number-input">
             <a href="#" className="decrement" onClick={this.decrement}>
               –

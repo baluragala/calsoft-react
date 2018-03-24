@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header";
-import ProductListItem from "./components/ProductListItem";
-
+import ProductList from "./components/ProductList";
+import { Route, Switch } from "react-router-dom";
+import Contact from "./components/Contact";
+import About from "./components/About";
+import ProductDetail from "./components/ProductDetail";
 export class App extends Component {
   constructor() {
     super();
@@ -25,13 +28,20 @@ export class App extends Component {
   render() {
     return (
       <div className="container">
+        <Switch>
+          <Route exact path="/products" component={ProductList} />
+          <Route path="/products/:pid" component={ProductDetail} />
+          <Route
+            path="/login"
+            render={props => <Contact {...props} myProp={"test"} />}
+          />
+          <Route path="/signup" component={About} />
+        </Switch>
+
         <Header
           totalProducts={this.state.cart.totalProducts}
           totalValue={this.state.cart.totalValue}
         />
-        <div className="row products-list">
-          <ProductListItem addToCartClick={this.handleAddToCart} />
-        </div>
       </div>
     );
   }
